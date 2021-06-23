@@ -1,5 +1,23 @@
 # Ubuntu configuration guide
 
+# Recommended Package to Install
+```bash
+   sudo apt-get install -y \
+   byobu vim-nox git
+```
+
+# Setup App Configuration
+Clone dotfiles repo at https://github.com/farhanmustar/dotfiles.git.
+Follow the dotfiles readme.
+
+# Remode Desktop Configuration (RDP)
+```bash
+   sudo apt-get install xrdp
+   sudo adduser xrdp ssl-cert
+   sudo systemctl restart xrdp
+```
+
+# Vim 8 for Older System
 Older ubuntu system such as ubuntu 14.04 trusty does not have vim 8.0. Use thirdparty ppa.
 ```bash
   sudo add-apt-repository ppa:jonathonf/vim
@@ -7,6 +25,7 @@ Older ubuntu system such as ubuntu 14.04 trusty does not have vim 8.0. Use third
   sudo apt-get install vim
 ```
 
+# Universal Ctags
 Install universal ctags. TODO: use ppa?
 ```bash
   git clone https://github.com/universal-ctags/ctags.git
@@ -17,6 +36,7 @@ Install universal ctags. TODO: use ppa?
   make install # may require extra privileges depending on where to install
 ```
 
+# Ripgrep
 Install ripgrep. TODO: this is not supoorted in ubuntu 14.04
 ```bash
   sudo add-apt-repository ppa:x4121/ripgrep
