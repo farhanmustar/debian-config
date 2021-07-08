@@ -3,14 +3,15 @@
 # Recommended Package to Install
 ```bash
    sudo apt-get install -y \
-   byobu vim-nox git
+   byobu vim-nox git \
+   gnome-tweak-tool
 ```
 
 # Setup App Configuration
 Clone dotfiles repo at https://github.com/farhanmustar/dotfiles.git.
 Follow the dotfiles readme.
 
-# Remode Desktop Configuration (RDP)
+# Remote Desktop Configuration (RDP)
 ```bash
    sudo apt-get install xrdp
    sudo adduser xrdp ssl-cert
