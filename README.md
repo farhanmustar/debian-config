@@ -7,6 +7,12 @@ Mainly will focus on Pop OS distro since curretly trying to setup that distro.
    byobu git \
    gnome-tweaks \
    google-chrome-stable
+   virt-manager qemu
+```
+
+Add user to libvirt group.
+```bash
+sudo usermod -G libvirt -a $USER
 ```
 
 # Setup App Configuration
@@ -46,14 +52,22 @@ Install ripgrep. TODO: this is not supoorted in ubuntu 14.04
   sudo apt-get update
 ```
 
-<!-- TODO: migrate all to fedora -->
-# Kdenlive (Fedora)
-* Allow rpm fusion
+# Notes
+
+## Network Configuration
+Configure network interface using terminal ui.
 ```bash
-  sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm  
-  sudo dnf install kdenlive
+sudo nmtui
 ```
 
-# Virtualization
-* Fedora already install qemu kvm and libvirt by default and can be managed using `gnome-boxes`.
-* Use cockpit to manage using web app.
+## SSH and SSH Agent
+
+Gen rsa key
+```bash
+ssh-keygen -t rsa
+```
+
+Add key to agent. (-t timeout)
+```bash
+ssh-agent -t 3600 <path_to_key>
+```
