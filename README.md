@@ -1,10 +1,12 @@
-# Ubuntu configuration guide
+# Debian configurations guide
+Mainly will focus on Pop OS distro since curretly trying to setup that distro.
 
 # Recommended Package to Install
 ```bash
    sudo apt-get install -y \
-   byobu vim-nox git \
-   gnome-tweak-tool
+   byobu git \
+   gnome-tweaks \
+   google-chrome-stable
 ```
 
 # Setup App Configuration
