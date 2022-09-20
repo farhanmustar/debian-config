@@ -19,6 +19,21 @@ sudo usermod -G libvirt -a $USER
 Clone dotfiles repo at https://github.com/farhanmustar/dotfiles.git.
 Follow the dotfiles readme.
 
+# Fingerprint Reader Configuration
+<!-- source from https://rcarrillo.dev/enable-fingerprint-scanner-on-pop-os-21-10/ -->
+Install required apps
+```bash
+sudo apt-get install fprintd libpam-fprintd
+```
+Enroll the finger.
+```bash
+fprintd-enroll
+```
+update PAM to use fingerprint scanner. (press space to toggle checkbox)
+```bash
+sudo pam-auth-update
+```
+
 # Remote Desktop Configuration (RDP)
 ```bash
    sudo apt-get install xrdp
