@@ -6,6 +6,7 @@ Mainly will focus on Pop OS distro since curretly trying to setup that distro.
    sudo apt-get install -y \
    byobu git \
    flameshot \
+   remmina \
    gnome-tweaks gnome-shell-extensions chrome-gnome-shell
    google-chrome-stable \
    virt-manager qemu
@@ -54,7 +55,7 @@ sudo apt install -y ./<path_to_deb_file>
 Currenlty dont have easy way to install from terminal.
 Use popshop to install. search zenmap.
 
-# Remote Desktop Configuration (RDP)
+# Remote Desktop Configuration (RDP server)
 ```bash
    sudo apt-get install xrdp
    sudo adduser xrdp ssl-cert
@@ -94,11 +95,15 @@ Configure network interface using terminal ui.
 ```bash
 sudo nmtui
 ```
-Virtual machine manager bridge configurations can be change by
-running the following command.
+
+Virtual machine manager network config can be configure at Edit > Connection Details.
+Alternatively change by settings running the following command. (last two line to restart).
 ```bash
 virsh net-edit default
+virsh net-destroy default
+virsh net-start default
 ```
+virsh is cli for virtual machine config.
 
 ## SSH Key and SSH Agent
 
@@ -117,3 +122,30 @@ Use `-A` to forward ssh ageant to remote connection.
 ```bash
 ssh -A user@remoteurl
 ```
+
+## Synaptic touchpad device
+For synaptic touchpad we have manufacturer driver that make the touchpad more responsive.
+Check device type.
+```bash
+xinput --list
+```
+Install device driver.
+```bash
+sudo apt install xserver-xorg-input-synaptics
+```
+Temp config the settings like this.
+List props
+```bash
+xinput --list-props <deviceID/name>
+```
+Set prop (temp)
+```bash
+xinput --set-prop <deviceID/name> <propID> <val1> [<val2> ...]
+```
+Make it persistent refer [here](https://www.x.org/releases/X11R7.6/doc/man/man4/synaptics.4.xhtml#heading4) 
+copy or modify config from `./etc/X11/xorg.conf.d/99-synaptics.conf` to `/etc/X11/xorg.conf.d/`
+```bash
+sudo cp ./etc/X11/xorg.conf.d/99-synaptics.conf /etc/X11/xorg.conf.d/
+```
+Hint:
+Synaptic scrolling distance set to -ve value to invert scroll direction.
