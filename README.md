@@ -36,10 +36,6 @@ Enroll the finger.
 ```bash
 fprintd-enroll
 ```
-update PAM to use fingerprint scanner. (press space to toggle checkbox)
-```bash
-sudo pam-auth-update
-```
 
 # Wezterm terminal
 Download deb file, find other version [here](https://wezfurlong.org/wezterm/install/linux.html) .
@@ -149,3 +145,18 @@ sudo cp ./etc/X11/xorg.conf.d/99-synaptics.conf /etc/X11/xorg.conf.d/
 ```
 Hint:
 Synaptic scrolling distance set to -ve value to invert scroll direction.
+
+## Reject touchpad tap while typing
+syndaemon can be use to reject touchpad tap when typing.
+currently just use startup application.
+add the following bash script to `/usr/bin/syndaemon_restart` 
+```bash
+#!/usr/bin/bash
+
+killall syndaemon || syndaemon -i 1 -KRdt
+```
+Allow execution
+```bash
+sudo chmod +x /usr/bin/syndaemon_restart
+```
+Search statup application and add `/usr/bin/syndaemon_restart` .
