@@ -7,6 +7,7 @@ Mainly will focus on Pop OS distro since curretly trying to setup that distro.
    byobu git \
    flameshot \
    remmina \
+   cpu-x \
    gnome-tweaks gnome-shell-extensions chrome-gnome-shell
    google-chrome-stable \
    virt-manager qemu
@@ -160,3 +161,15 @@ Allow execution
 sudo chmod +x /usr/bin/syndaemon_restart
 ```
 Search statup application and add `/usr/bin/syndaemon_restart` .
+
+## Touchpad Issues.
+Recommended to add them as shortcut command if keep happening.
+Sometimes cannot move cursor at all. Try this to recover.
+```bash
+echo -n rescan | sudo tee  /sys/bus/serio/devices/serio1/drvctl
+```
+Sometimes cannot scroll. Try this to recover.
+```bash
+sudo modprobe -r psmouse
+sudo modprobe psmouse
+```
