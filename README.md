@@ -8,7 +8,8 @@ Mainly will focus on Pop OS distro since curretly trying to setup that distro.
    flameshot \
    remmina \
    cpu-x \
-   gnome-tweaks gnome-shell-extensions chrome-gnome-shell
+   gnome-tweaks gnome-shell-extensions chrome-gnome-shell \
+   network-manager-l2tp network-manager-l2tp-gnome \
    google-chrome-stable \
    virt-manager qemu
 ```
