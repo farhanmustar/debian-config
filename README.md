@@ -24,7 +24,7 @@ Gnome extensions urls
 ```bash
 ```
 
-# Setup App Configuration
+# Setup Dotfiles
 Clone dotfiles repo at https://github.com/farhanmustar/dotfiles.git.
 Follow the dotfiles readme.
 
@@ -58,6 +58,14 @@ Use popshop to install. search zenmap.
    sudo apt-get install xrdp
    sudo adduser xrdp ssl-cert
    sudo systemctl restart xrdp
+```
+
+# Gif Recorder
+For now use peek, have not found one that is in default repo.
+```bash
+sudo add-apt-repository ppa:peek-developers/stable
+sudo apt update
+sudo apt install peek
 ```
 
 # Vim 8 for Older System
@@ -104,6 +112,8 @@ virsh net-start default
 virsh is cli for virtual machine config.
 
 ## SSH Key and SSH Agent
+NOTE: Pop OS use seahorse to manage password and keys.
+Can generate directly from seahorse.
 
 Gen rsa key. Public key will be placed together with suffix .pub.
 ```bash
@@ -113,6 +123,14 @@ ssh-keygen -t rsa
 Add key to agent. (-t timeout)
 ```bash
 ssh-agent -t 3600 <path_to_key>
+```
+or
+```bash
+ssh-add <path_to_key>
+```
+Remove user added keys (not added from seahorse).
+```bash
+ssh-add -D
 ```
 
 ## SSH Client
