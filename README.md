@@ -68,6 +68,11 @@ sudo apt update
 sudo apt install peek
 ```
 
+# Recording and Streaming
+```bash
+sudo apt install obs-studio
+```
+
 # Vim 8 for Older System
 Older ubuntu system such as ubuntu 14.04 trusty does not have vim 8.0. Use thirdparty ppa.
 ```bash
@@ -92,6 +97,17 @@ Install ripgrep. TODO: this is not supoorted in ubuntu 14.04
 ```bash
   sudo add-apt-repository ppa:x4121/ripgrep
   sudo apt-get update
+```
+
+# Gaming
+Pop OS got two iso, one for nvdia one for others. need to install the correct one.
+## Lutris
+* TODO: expore this software.
+
+# Logitech  Devices
+Use solaar to configure them.
+```bash
+sudo apt install solaar
 ```
 
 # Notes
@@ -173,7 +189,8 @@ add the following bash script to `/usr/bin/syndaemon_restart`
 ```bash
 #!/usr/bin/bash
 
-killall syndaemon || syndaemon -i 1 -KRdt
+killall syndaemon || true
+syndaemon -i 3 -KRdt
 ```
 Allow execution
 ```bash
