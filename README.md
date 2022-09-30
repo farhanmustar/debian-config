@@ -209,3 +209,9 @@ Sometimes cannot scroll. Try this to recover.
 sudo modprobe -r psmouse
 sudo modprobe psmouse
 ```
+
+## Windows Virtual Machine Performance Improvement
+Install virtio driver [here](https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers)
+to improve performance.
+
+TODO: other os might also benefit from installing virtio driver.
