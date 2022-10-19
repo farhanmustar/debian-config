@@ -49,6 +49,11 @@ Install the deb.
 sudo apt install -y ./<path_to_deb_file>
 ```
 
+# Chrome Unstable
+Chrome seems to crash alot. Now trying the flatpack version.
+# TODO: confirm already the flatpack version is more stable
+# TODO: add flatpack install commmand for installing flatpack pkg.
+
 # Zenmap for ip scanner
 Currenlty dont have easy way to install from terminal.
 Use popshop to install. search zenmap.
@@ -215,3 +220,4 @@ Install virtio driver [here](https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers
 to improve performance.
 
 TODO: other os might also benefit from installing virtio driver.
+TODO: refer [here](https://github.com/bearlike/my-popos-setup) for setup ref.
