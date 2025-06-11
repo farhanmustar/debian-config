@@ -19,6 +19,11 @@ Add user to libvirt group.
 sudo usermod -G libvirt -a $USER
 ```
 
+# Disk space managment similar to wiztree in windows
+```bash
+sudo apt install ncdu
+```
+
 <!-- TODO: explore https://github.com/pop-os/touchegg#installation -->
 Gnome extensions urls
 ```bash
