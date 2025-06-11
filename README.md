@@ -22,6 +22,8 @@ sudo usermod -G libvirt -a $USER
 # Disk space managment similar to wiztree in windows
 ```bash
 sudo apt install ncdu
+# with gui.
+sudo apt install qdirstat
 ```
 
 <!-- TODO: explore https://github.com/pop-os/touchegg#installation -->
